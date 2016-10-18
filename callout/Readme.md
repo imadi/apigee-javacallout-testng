@@ -90,7 +90,7 @@ You must have the required dependencies in your local maven repository.
  - Apigee Edge expressions v1.0
  - Apigee Edge message-flow v1.0
 
-Follow the instructions in the [Dependencies section.](apigee-javacallout-testng)
+Follow the instructions in the [Dependencies section.](https://github.com/swilliams11/apigee-javacallout-testng#dependencies)
 
 ## Building the Jar
 
