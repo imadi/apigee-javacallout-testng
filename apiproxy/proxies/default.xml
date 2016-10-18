@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <HTTPProxyConnection>
+        <BasePath>/v1/javacallout/regex</BasePath>
+        <!-- <VirtualHost>default</VirtualHost> -->
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <FaultRules>
+        <FaultRule name="error">
+            <Condition>threat_error != null</Condition>
+            <Step>
+                <Name>Assign.PublishError</Name>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request/>
+    </PreFlow>
+    <PostFlow name="PostFlow"/>
+    <Flows>
+        <Flow name="protect">
+            <Condition>(proxy.pathsuffix ~~ "/protect") and (request.verb = "POST")</Condition>
+            <Description>Threat protection</Description>
+            <Request>
+                <Step>
+                    <Name>Java.Regex</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Condition>flw.apigee.status == "success"</Condition>
+                    <Name>Fault.ThreatResponse</Name>
+                </Step>
+                <Step>
+                    <Name>Assign.SuccessResponse</Name>
+                </Step>
+            </Response>
+        </Flow>
+        <Flow name="unknown request">
+            <Request>
+                <Step>
+                    <Name>Fault.UnknownRequest</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <!-- catch all route -->
+    <RouteRule name="no-route"/>
+</ProxyEndpoint>

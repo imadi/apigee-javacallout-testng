@@ -1,0 +1,19 @@
+<RaiseFault name='Fault.ThreatResponse'>
+  <DisplayName>Fault.ThreatResponse</DisplayName>
+  <Description>Threat Detected</Description>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <FaultResponse>
+    <Set>
+      <Payload contentType='application/json'
+               variablePrefix='%' variableSuffix='#'><![CDATA[{
+  "error" : {
+    "code" : 400,
+    "message" : "Threat detected in request"
+  }
+}
+]]></Payload>
+      <StatusCode>400</StatusCode>
+      <ReasonPhrase>Bad Request</ReasonPhrase>
+    </Set>
+  </FaultResponse>
+</RaiseFault>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JavaCallout name="Java.Regex">
+    <Properties>
+        <!-- JS injection patterns -->
+        <Property name="regex">(?i)(&lt;\s*script\b[^>]*>[^&lt;]+&lt;\s*.+\s*[s][c][r][i][p][t]\s*>)</Property>
+        <Property name="matchHeaders">true</Property>
+        <Property name="toMatch">request.content</Property>
+        <Property name="username">mysample@email.com</Property>
+        <Property name="checkHeaders">true</Property>
+    </Properties>
+    <ClassName>com.apigee.callout.JavaCallout</ClassName>
+    <ResourceURL>java://regex-callout.jar</ResourceURL>
+</JavaCallout>

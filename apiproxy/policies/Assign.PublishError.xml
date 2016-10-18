@@ -1,0 +1,16 @@
+<AssignMessage name='Assign.PublishError'>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <Set>
+    <Payload contentType='application/json'
+             variablePrefix='%' variableSuffix='#'><![CDATA[{
+  "error" : {
+    "code" : 500,
+    "message" : "%threat_error#",
+    "reason" : "%threat_reason#"
+  }
+}
+]]></Payload>
+    <StatusCode>500</StatusCode>
+    <ReasonPhrase>Server Error</ReasonPhrase>
+  </Set>
+</AssignMessage>
