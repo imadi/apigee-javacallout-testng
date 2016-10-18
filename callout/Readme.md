@@ -84,43 +84,13 @@ To use it:
 For some examples of how to configure the callout, see the related api proxy bundle.
 
 
-## Dependencies
+## How do I get the dependencies?
 You must have the required dependencies in your local maven repository.
 
  - Apigee Edge expressions v1.0
  - Apigee Edge message-flow v1.0
 
-### How do I get the dependencies?
-
-Unfortunately, these jar files are not in the Maven central repository.  However, they are included in the `lib` directory.  You must install these into your local maven repository by following the steps below.  Once you install these jar files then you can run `mvn package` or `mvn test` to run the TestNG test scripts.
-
-1. `cd lib`
-2. Execute the following maven command to install the expressions-1.0.0.jar file.
-```
-mvn install:install-file \
- -Dfile=expressions-1.0.0.jar \
- -DgroupId=com.apigee.edge \
- -DartifactId=expressions \
- -Dversion=1.0.0 \
- -Dpackaging=jar \
- -DgeneratePom=true
-```
-
-3. Execute the following maven command to install the message-flow-1.0.0.jar file.
-```
-mvn install:install-file \
- -Dfile=message-flow-1.0.0.jar \
- -DgroupId=com.apigee.edge \
- -DartifactId=message-flow \
- -Dversion=1.0.0 \
- -Dpackaging=jar \
- -DgeneratePom=true
-```
-
-
-You can also download the dependencies here.
-https://github.com/apigee/api-platform-samples/tree/master/doc-samples/java-cookbook/lib
-
+Follow the instruction in the [main README file](apigee-javacallout-testng#dependencies)
 
 ## Building the Jar
 

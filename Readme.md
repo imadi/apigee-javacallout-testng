@@ -8,7 +8,7 @@ This directory contains Java source code for a callout which executes regular ex
 - [bin](bin) - files to invoke a sample test against the deployed proxy
 
 
-## Dependencies
+## Dependencies<a name="dependencies"></a> 
 There are two dependencies that are required to execute this project.  
 
  - Apigee Edge expressions v1.0
@@ -141,50 +141,5 @@ Deployed revision is: 7
 [INFO] ------------------------------------------------------------------------
 ```
 
-## Invoke Sample Curl commands
-1. Update the following fields in the `setenv.sh` file located in the `bin` directory.
-```
-org="orgname"
-username="orgadmin@email.com"
-url="https://api.enterprise.apigee.com"
-env="test"
-api_domain="apigee.net"
-```
-
-2. Once the proxy is deployed you can execute the following command.
-```
-cd bin
-
-./invoke.sh
-```
-
-3. You should receive the following results after you execute `invoke.sh`.
-```
-Using org and environment configured in /setup/setenv.sh
-HTTP/1.1 400 Bad Request
-Date: Tue, 18 Oct 2016 02:32:52 GMT
-Content-Type: application/json
-Content-Length: 85
-Connection: keep-alive
-Server: Apigee Router
-
-{
-  "error" : {
-    "code" : 400,
-    "message" : "Threat detected in request"
-  }
-}
-HTTP/1.1 400 Bad Request
-Date: Tue, 18 Oct 2016 02:32:53 GMT
-Content-Type: application/json
-Content-Length: 85
-Connection: keep-alive
-Server: Apigee Router
-
-{
-  "error" : {
-    "code" : 400,
-    "message" : "Threat detected in request"
-  }
-}
-```
+## How to send sample requests after the its deployed?
+View the readme in the [bin](bin) directory.
